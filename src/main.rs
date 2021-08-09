@@ -1,6 +1,10 @@
 use structopt::StructOpt;
 
-fn main() {}
+fn main() {
+    let args = Cli::from_args();
+    dbg!(args.pattern);
+    dbg!(args.path);
+}
 
 /// Search for a pattern in a file and display the lines that contain it.
 #[derive(StructOpt)]
