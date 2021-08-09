@@ -1,3 +1,6 @@
 fn main() {
-    println!("Hello, world!");
+}
+struct Cli {
+    pattern: String,
+    path: std::path::PathBuf,
 }
