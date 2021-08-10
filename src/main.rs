@@ -1,9 +1,14 @@
+use std::fs;
 use structopt::StructOpt;
 
 fn main() {
     let args = Cli::from_args();
-    dbg!(args.pattern);
-    dbg!(args.path);
+    let content = fs::read_to_string(&args.path).expect("Could not read file");
+    for line in content.lines() {
+        if line.contains(&args.pattern) {
+            println!("{}", line);
+        }
+    }
 }
 
 /// Search for a pattern in a file and display the lines that contain it.
