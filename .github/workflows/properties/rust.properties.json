@@ -1,0 +1,4 @@
+{
+	"name" : "Test and build",
+	"description" : "Tests and builds the project on every push"
+}
