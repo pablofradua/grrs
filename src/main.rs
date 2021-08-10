@@ -1,12 +1,15 @@
 use std::fs;
+use std::io::{BufRead, BufReader};
 use structopt::StructOpt;
 
 fn main() {
     let args = Cli::from_args();
-    let content = fs::read_to_string(&args.path).expect("Could not read file");
-    for line in content.lines() {
+    let file = fs::File::open(&args.path).expect("Could not open file");
+    let reader = BufReader::new(file);
+    for (index, line) in reader.lines().enumerate() {
+        let line = line.expect("Error reading line");
         if line.contains(&args.pattern) {
-            println!("{}", line);
+            println!("({}): {}", index, line);
         }
     }
 }
