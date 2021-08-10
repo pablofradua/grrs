@@ -1,3 +1,5 @@
+[![Test and Build](https://github.com/pablofradua/grrs/actions/workflows/rust.yml/badge.svg)](https://github.com/pablofradua/grrs/actions/workflows/rust.yml)
+
 # grrs(minigrep)
 
 Grep like command line application, with less features than the original one.
